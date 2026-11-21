@@ -7,5 +7,6 @@
 ```
 tox/
 ├── web/       # Frontend (giao diện người dùng)
-└── backend/   # Backend (API, xử lý dữ liệu)
+├── backend/   # Backend (API, xử lý dữ liệu)
+└── doc/       # Tài liệu: yêu cầu (spec) và kiến trúc (architecture)
 ```
