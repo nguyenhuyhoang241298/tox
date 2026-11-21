@@ -16,7 +16,7 @@ export function HomePage() {
     <main className="mx-auto max-w-2xl p-8">
       <Card>
         <CardHeader>
-          <CardTitle className="text-3xl">VietLearn</CardTitle>
+          <CardTitle className="text-3xl">TOX</CardTitle>
           <CardDescription>
             {user ? `Xin chào, ${user}!` : 'Học tiếng Việt mỗi ngày.'}
           </CardDescription>

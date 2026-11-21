@@ -1,9 +1,9 @@
 {
-	"name": "express-typescript-boilerplate",
+	"name": "tox-backend",
 	"version": "1.0.14",
-	"description": "An Express boilerplate backend",
+	"description": "Backend của TOX",
 	"author": "Edwin Hernandez",
-	"repository": "edwinhern/express-typescript-2024",
+	"repository": "nguyenhuyhoang241298/vietlearn",
 	"license": "MIT",
 	"main": "index.ts",
 	"private": true,

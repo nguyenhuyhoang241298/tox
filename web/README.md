@@ -1,6 +1,6 @@
 # web
 
-Frontend của VietLearn: React 19 + TypeScript + Vite 8, TanStack Query, Zustand, Tailwind CSS 4, cấu trúc theo [Feature-Sliced Design](https://feature-sliced.design) v2.1.
+Frontend của TOX: React 19 + TypeScript + Vite 8, TanStack Query, Zustand, Tailwind CSS 4, cấu trúc theo [Feature-Sliced Design](https://feature-sliced.design) v2.1.
 
 ## Chạy
 
