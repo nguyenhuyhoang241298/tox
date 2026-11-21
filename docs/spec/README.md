@@ -14,3 +14,7 @@ Thư mục này lưu các tài liệu mô tả **dự án cần làm gì**.
 - Mỗi tính năng hoặc nhóm yêu cầu là một file Markdown riêng, ví dụ `auth.md`, `lesson.md`.
 - Đặt tên file bằng chữ thường, nối bằng dấu gạch ngang.
 - Ở đầu mỗi file ghi trạng thái: `Nháp`, `Đang xem xét` hoặc `Đã chốt`.
+
+## Tài liệu hiện có
+
+- [yeu-cau-ban-dau.md](./yeu-cau-ban-dau.md): tài liệu yêu cầu ban đầu của TOX (web app thi thử TOEIC).

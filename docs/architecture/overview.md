@@ -8,7 +8,7 @@ TOX là một monorepo gồm hai phần độc lập:
 tox/
 ├── web/       # Frontend: React + TypeScript + Vite
 ├── backend/   # Backend: Express + TypeScript
-└── doc/       # Tài liệu
+└── docs/      # Tài liệu
 ```
 
 Web gọi backend qua HTTP (REST API). Backend bật CORS theo biến môi trường `CORS_ORIGIN`.

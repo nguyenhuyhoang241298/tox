@@ -8,9 +8,9 @@
 tox/
 ├── web/       # Frontend (giao diện người dùng)
 ├── backend/   # Backend (API, xử lý dữ liệu)
-└── doc/       # Tài liệu: yêu cầu (spec) và kiến trúc (architecture)
+└── docs/      # Tài liệu: yêu cầu (spec) và kiến trúc (architecture)
 ```
 
 ## Tài liệu
 
-- [Spec – Tài liệu yêu cầu ban đầu](docs/SPEC.md)
+- [Spec – Tài liệu yêu cầu ban đầu](docs/spec/yeu-cau-ban-dau.md)
