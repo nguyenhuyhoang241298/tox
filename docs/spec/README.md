@@ -11,7 +11,7 @@ Thư mục này lưu các tài liệu mô tả **dự án cần làm gì**.
 
 ## Quy ước
 
-- Mỗi tính năng hoặc nhóm yêu cầu là một file Markdown riêng, ví dụ `auth.md`, `lesson.md`.
+- Mỗi tính năng hoặc nhóm yêu cầu là một file Markdown riêng, ví dụ `auth.md`, `exam.md`.
 - Đặt tên file bằng chữ thường, nối bằng dấu gạch ngang.
 - Ở đầu mỗi file ghi trạng thái: `Nháp`, `Đang xem xét` hoặc `Đã chốt`.
 

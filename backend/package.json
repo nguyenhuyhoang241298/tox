@@ -1,11 +1,13 @@
 {
 	"name": "tox-backend",
-	"version": "1.0.14",
+	"version": "0.0.0",
 	"description": "Backend của TOX",
-	"author": "Edwin Hernandez",
 	"repository": "nguyenhuyhoang241298/vietlearn",
 	"license": "MIT",
-	"main": "index.ts",
+	"engines": {
+		"node": ">=24"
+	},
+	"main": "dist/index.js",
 	"private": true,
 	"scripts": {
 		"build": "tsc && tsup",

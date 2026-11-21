@@ -1,5 +1,10 @@
 name: "Setup pnpm"
-description: "Sets up pnpm with caching and installation"
+description: "Cài Node + pnpm theo .tool-versions ở gốc repo, rồi cài dependency cho một thư mục"
+
+inputs:
+  working-directory:
+    description: "Thư mục chứa package.json và pnpm-lock.yaml (web hoặc backend)"
+    required: true
 
 runs:
   using: composite
@@ -18,21 +23,14 @@ runs:
       with:
         version: ${{ steps.versions.outputs.pnpm }}
 
-    - name: Get pnpm store directory
-      shell: bash
-      run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-    - name: Restore pnpm cache
-      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+    - name: Setup Node
+      uses: actions/setup-node@v4
       with:
-        path: |
-          ${{ env.STORE_PATH }}
-          node_modules
-          .pnpm-store
-        key: ${{ runner.os }}-node-${{ steps.versions.outputs.node }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-node-${{ steps.versions.outputs.node }}-pnpm-
+        node-version: ${{ steps.versions.outputs.node }}
+        cache: pnpm
+        cache-dependency-path: ${{ inputs.working-directory }}/pnpm-lock.yaml
 
     - name: Install dependencies
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: pnpm install --frozen-lockfile

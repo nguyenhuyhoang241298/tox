@@ -1,6 +1,6 @@
 # TOX – Tài liệu yêu cầu ban đầu (Web app thi thử TOEIC)
 
-Cập nhật: 21/11/2026 · Bản gốc: [Claude Docs](https://claude.ai/artifact/N6ftWh1pJxALMSDS7fhKMY)
+Trạng thái: Đang xem xét · Cập nhật: 21/11/2026 · Bản gốc: [Claude Docs](https://claude.ai/artifact/N6ftWh1pJxALMSDS7fhKMY)
 
 ## 1. Tổng quan dự án
 
@@ -118,5 +118,5 @@ Rủi ro lớn nhất của dự án là nội dung đề, không phải code. S
 - [ ] Mô hình thu phí và mức giá gói Premium?
 - [ ] Dùng bảng quy đổi điểm nào, và hiệu chỉnh thế nào khi có dữ liệu thật?
 - [ ] Chọn nhà cung cấp AI cho AI Tutor và chấm S\&W; ngân sách chi phí mỗi người dùng?
-- [ ] Hạ tầng: CSDL (PostgreSQL hay MongoDB), nơi lưu audio, nơi triển khai?
+- [ ] Hạ tầng: CSDL (PostgreSQL hay MongoDB), nơi lưu audio, nơi triển khai? Đề xuất trong [kiến trúc v1](../architecture/v1.md): PostgreSQL + Drizzle, object storage cho audio/ảnh.
 - [ ] Thời hạn ra mắt MVP và quy mô đội ngũ?

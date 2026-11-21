@@ -18,7 +18,7 @@ export function HomePage() {
         <CardHeader>
           <CardTitle className="text-3xl">TOX</CardTitle>
           <CardDescription>
-            {user ? `Xin chào, ${user}!` : 'Học tiếng Việt mỗi ngày.'}
+            {user ? `Xin chào, ${user}!` : 'Thi thử TOEIC Listening & Reading.'}
           </CardDescription>
         </CardHeader>
         <CardContent>

@@ -8,7 +8,7 @@
 		":automergeRequireAllStatusChecks",
 		"helpers:pinGitHubActionDigests"
 	],
-	"timezone": "America/Chicago",
+	"timezone": "Asia/Ho_Chi_Minh",
 	"labels": ["dependencies"],
 	"dependencyDashboard": true,
 	"lockFileMaintenance": {

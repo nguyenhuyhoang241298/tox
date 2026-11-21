@@ -5,13 +5,15 @@
 TOX là một monorepo gồm hai phần độc lập:
 
 ```
-tox/
+vietlearn/      # repo (dự kiến đổi tên thành tox)
 ├── web/       # Frontend: React + TypeScript + Vite
 ├── backend/   # Backend: Express + TypeScript
 └── docs/      # Tài liệu
 ```
 
-Web gọi backend qua HTTP (REST API). Backend bật CORS theo biến môi trường `CORS_ORIGIN`.
+Web gọi backend qua HTTP (REST API, tiền tố `/api/v1`). Khi chạy local, web ở `http://localhost:5173`, backend ở `http://localhost:8080`; web đọc địa chỉ backend từ `VITE_API_URL`, backend cho phép CORS theo `CORS_ORIGIN`.
+
+Node 24 LTS và pnpm, phiên bản ghi trong `.tool-versions` ở gốc repo. CI ở `.github/workflows/ci.yml` chạy cho cả hai phần.
 
 ## Web (`web/`)
 
@@ -34,7 +36,7 @@ web/src/
     └── lib/     # Tiện ích (ví dụ hàm cn)
 ```
 
-Các layer `widgets/`, `features/`, `entities/` của FSD sẽ được thêm khi cần. Mỗi slice chỉ xuất ra ngoài qua `index.ts`. Quy tắc FSD được kiểm tra bằng Steiger (`npm run arch`).
+Các layer `widgets/`, `features/`, `entities/` của FSD sẽ được thêm khi cần. Mỗi slice chỉ xuất ra ngoài qua `index.ts`. Quy tắc FSD được kiểm tra bằng Steiger (`pnpm arch`).
 
 ## Backend (`backend/`)
 
@@ -47,8 +49,8 @@ backend/src/
 ├── index.ts        # Điểm khởi động server
 ├── server.ts       # Tạo app Express, gắn middleware và route
 ├── api/            # Các module tính năng
-│   ├── healthCheck/  # GET /health-check
-│   └── user/         # /users
+│   ├── healthCheck/  # GET /api/v1/health-check
+│   └── users/        # /api/v1/users
 │       ├── userRouter.ts      # Khai báo route + tài liệu OpenAPI
 │       ├── userController.ts  # Nhận request, trả response
 │       ├── userService.ts     # Logic nghiệp vụ
@@ -61,6 +63,8 @@ backend/src/
     └── utils/      # envConfig, validate request, helper HTTP
 ```
 
-Thứ tự middleware trong `server.ts`: JSON/urlencoded parser → CORS → Helmet → rate limiter → request logger → route → Swagger UI → error handler.
+Thứ tự middleware trong `server.ts`: JSON/urlencoded parser → CORS → Helmet → rate limiter → request logger → route `/api/v1` → Swagger UI (`/`, `/swagger.json`) → error handler.
+
+Rate limit tính theo IP: mặc định 300 request mỗi 60 giây (`COMMON_RATE_LIMIT_MAX_REQUESTS`, `COMMON_RATE_LIMIT_WINDOW_MS`). `TRUST_PROXY` là số reverse proxy đứng trước backend (0 khi chạy local), để IP lấy từ `X-Forwarded-For` không bị giả.
 
 Hiện backend chưa có database, `userRepository` dùng dữ liệu mẫu trong bộ nhớ.

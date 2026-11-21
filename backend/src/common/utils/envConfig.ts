@@ -10,11 +10,13 @@ const envSchema = z.object({
 
 	PORT: z.coerce.number().int().positive().default(8080),
 
-	CORS_ORIGIN: z.string().url().default("http://localhost:8080"),
+	CORS_ORIGIN: z.string().url().default("http://localhost:5173"),
 
-	COMMON_RATE_LIMIT_MAX_REQUESTS: z.coerce.number().int().positive().default(1000),
+	TRUST_PROXY: z.coerce.number().int().min(0).default(0),
 
-	COMMON_RATE_LIMIT_WINDOW_MS: z.coerce.number().int().positive().default(1000),
+	COMMON_RATE_LIMIT_MAX_REQUESTS: z.coerce.number().int().positive().default(300),
+
+	COMMON_RATE_LIMIT_WINDOW_MS: z.coerce.number().int().positive().default(60000),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);

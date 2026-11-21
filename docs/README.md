@@ -11,4 +11,5 @@ docs/
 ## Tài liệu chính
 
 - [Yêu cầu ban đầu](./spec/yeu-cau-ban-dau.md)
-- [Tổng quan kiến trúc](./architecture/overview.md)
+- [Kiến trúc v1 (đề xuất)](./architecture/v1.md)
+- [Tổng quan code hiện có](./architecture/overview.md)
