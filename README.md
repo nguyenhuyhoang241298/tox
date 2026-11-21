@@ -10,3 +10,7 @@ tox/
 ├── backend/   # Backend (API, xử lý dữ liệu)
 └── doc/       # Tài liệu: yêu cầu (spec) và kiến trúc (architecture)
 ```
+
+## Tài liệu
+
+- [Spec – Tài liệu yêu cầu ban đầu](docs/SPEC.md)
