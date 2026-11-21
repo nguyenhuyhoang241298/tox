@@ -5,7 +5,7 @@
 TOX là một monorepo gồm hai phần độc lập:
 
 ```
-vietlearn/      # repo (dự kiến đổi tên thành tox)
+tox/            # repo nguyenhuyhoang241298/tox
 ├── web/       # Frontend: React + TypeScript + Vite
 ├── backend/   # Backend: Express + TypeScript
 └── docs/      # Tài liệu

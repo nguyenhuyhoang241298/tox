@@ -5,7 +5,7 @@ Web app thi thử TOEIC Listening & Reading: làm đề giống thi thật trên
 ## Cấu trúc thư mục
 
 ```
-vietlearn/      # tên repo trên GitHub (dự kiến đổi thành tox)
+tox/            # repo nguyenhuyhoang241298/tox
 ├── web/       # Frontend (giao diện người dùng)
 ├── backend/   # Backend (API, xử lý dữ liệu)
 └── docs/      # Tài liệu: yêu cầu (spec) và kiến trúc (architecture)

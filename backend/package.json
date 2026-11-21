@@ -2,7 +2,7 @@
 	"name": "tox-backend",
 	"version": "0.0.0",
 	"description": "Backend của TOX",
-	"repository": "nguyenhuyhoang241298/vietlearn",
+	"repository": "nguyenhuyhoang241298/tox",
 	"license": "MIT",
 	"engines": {
 		"node": ">=24"
