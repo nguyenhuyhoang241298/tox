@@ -8,7 +8,7 @@ Web app thi thử TOEIC Listening & Reading: làm đề giống thi thật trên
 vietlearn/      # tên repo trên GitHub (dự kiến đổi thành tox)
 ├── web/       # Frontend (giao diện người dùng)
 ├── backend/   # Backend (API, xử lý dữ liệu)
-└── docs/      # Tài liệu: yêu cầu (spec) và kiến trúc (architecture)
+└── docs/      # Tài liệu: yêu cầu (spec), kiến trúc (architecture), thiết kế (design)
 ```
 
 ## Tài liệu
@@ -16,6 +16,7 @@ vietlearn/      # tên repo trên GitHub (dự kiến đổi thành tox)
 - [Spec – Tài liệu yêu cầu ban đầu](docs/spec/yeu-cau-ban-dau.md)
 - [Kiến trúc v1 (đề xuất)](docs/architecture/v1.md)
 - [Tổng quan code hiện có](docs/architecture/overview.md)
+- [Design system](docs/design/DESIGN.md)
 
 ## Chạy local
 

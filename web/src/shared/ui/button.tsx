@@ -3,28 +3,32 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import * as React from 'react'
 import { cn } from '@/shared/lib'
 
+/**
+ * Button — DESIGN.md › Components › Button.
+ * Min height 44px (touch target), radius md, 16px/600. Hover darkens 8%, active scales .98,
+ * disabled = 40% opacity + not-allowed cursor.
+ */
 const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-body font-semibold whitespace-nowrap transition-[filter,background-color,transform] duration-150 select-none enabled:active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 aria-disabled:cursor-not-allowed aria-disabled:opacity-40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5",
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        destructive: 'bg-destructive text-white hover:bg-destructive/90',
-        outline:
-          'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground',
+        primary:
+          'bg-primary text-primary-foreground enabled:hover:brightness-[0.92]',
         secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
+          'border-input bg-card text-foreground enabled:hover:bg-muted border',
+        ghost: 'text-foreground enabled:hover:bg-muted',
+        destructive:
+          'bg-danger text-danger-foreground enabled:hover:brightness-[0.92]',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
-        default: 'h-9 px-4 py-2',
-        sm: 'h-8 rounded-md px-3',
-        lg: 'h-10 rounded-md px-6',
-        icon: 'size-9',
+        default: 'h-11 px-5',
+        lg: 'h-12 px-6',
+        icon: 'size-11',
       },
     },
-    defaultVariants: { variant: 'default', size: 'default' },
+    defaultVariants: { variant: 'primary', size: 'default' },
   },
 )
 
@@ -33,6 +37,7 @@ function Button({
   variant,
   size,
   asChild = false,
+  type,
   ...props
 }: React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & { asChild?: boolean }) {
@@ -40,6 +45,7 @@ function Button({
   return (
     <Comp
       data-slot="button"
+      type={asChild ? type : (type ?? 'button')}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />

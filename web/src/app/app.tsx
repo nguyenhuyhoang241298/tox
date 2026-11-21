@@ -6,7 +6,9 @@ import { queryClient } from '@/shared/api'
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <ErrorBoundary fallback={<p className="p-8">Đã có lỗi xảy ra.</p>}>
+    <ErrorBoundary
+      fallback={<p className="text-body p-8">Đã có lỗi xảy ra.</p>}
+    >
       <QueryClientProvider client={queryClient}>
         {children}
         <ReactQueryDevtools initialIsOpen={false} />

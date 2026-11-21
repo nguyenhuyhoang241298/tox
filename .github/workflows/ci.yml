@@ -7,7 +7,7 @@ on:
 
 jobs:
   web:
-    name: Web (lint, arch, typecheck, test, build)
+    name: Web (lint, arch, tokens, typecheck, test, build)
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -19,6 +19,7 @@ jobs:
           working-directory: web
       - run: pnpm lint
       - run: pnpm arch
+      - run: pnpm check:tokens
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build

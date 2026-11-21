@@ -1,3 +1,5 @@
+export { AnswerOption, type AnswerOptionState } from './answer-option'
+export { Badge, badgeVariants } from './badge'
 export { Button, buttonVariants } from './button'
 export {
   Card,
@@ -8,3 +10,5 @@ export {
   CardTitle,
 } from './card'
 export { Input } from './input'
+export { ProgressBar } from './progress-bar'
+export { ReadingPassage } from './reading-passage'

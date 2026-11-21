@@ -11,9 +11,12 @@
     "arch": "steiger ./src",
     "typecheck": "tsc -b",
     "test": "vitest run",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check:tokens": "bash scripts/check-tokens.sh"
   },
   "dependencies": {
+    "@fontsource-variable/literata": "^5.3.0",
+    "@fontsource/be-vietnam-pro": "^5.3.0",
     "@radix-ui/react-slot": "^1.5.0",
     "@tailwindcss/vite": "^4.3.3",
     "@tanstack/react-query": "^5.104.2",

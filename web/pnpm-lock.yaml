@@ -7,6 +7,12 @@ settings:
 importers:
   .:
     dependencies:
+      '@fontsource-variable/literata':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource/be-vietnam-pro':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@radix-ui/react-slot':
         specifier: ^1.5.0
         version: 1.5.0(@types/react@19.3.0)(react@19.3.0)
@@ -268,6 +274,18 @@ packages:
     resolution:
       {
         integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==,
+      }
+
+  '@fontsource-variable/literata@5.3.0':
+    resolution:
+      {
+        integrity: sha512-1Jw7xvOcoGyB83lxB2nG4bfNbqtX2/TTbdh9sHAOmU064SvmSdulDtA5RBu5JYWf64fdaKX7xU+z3GO1T2bCHA==,
+      }
+
+  '@fontsource/be-vietnam-pro@5.3.0':
+    resolution:
+      {
+        integrity: sha512-xhAQBGHDxP5BF8IJxedy5MoWUmc1DlPCcZbMLhvnPkf8TaYCbbUVs3LjpuJ4BYdTrdiCLaewNaY8z+owq/FqFw==,
       }
 
   '@internationalized/number@3.6.9':
@@ -2699,6 +2717,10 @@ snapshots:
       '@floating-ui/utils': 0.2.12
 
   '@floating-ui/utils@0.2.12': {}
+
+  '@fontsource-variable/literata@5.3.0': {}
+
+  '@fontsource/be-vietnam-pro@5.3.0': {}
 
   '@internationalized/number@3.6.9':
     dependencies:

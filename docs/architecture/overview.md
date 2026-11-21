@@ -24,13 +24,13 @@ Node 24 LTS và pnpm, phiên bản ghi trong `.tool-versions` ở gốc repo. CI
 ```
 web/src/
 ├── app/       # Khởi tạo ứng dụng: provider, router, style toàn cục
-├── pages/     # Mỗi trang là một slice (hiện có: home)
+├── pages/     # Mỗi trang là một slice (hiện có: home, dev-ui = kitchen sink chỉ khi dev)
 │   └── home/
 │       ├── ui/      # Component của trang
 │       ├── model/   # State của trang (Zustand store)
 │       └── index.ts # Public API của slice
 └── shared/    # Code dùng chung, không phụ thuộc nghiệp vụ
-    ├── ui/      # Component shadcn/ui (button, card, input)
+    ├── ui/      # Component dùng chung theo design system (button, card, input, badge, progress-bar, answer-option, reading-passage)
     ├── api/     # Cấu hình TanStack Query
     ├── config/  # Biến môi trường, cấu hình test
     └── lib/     # Tiện ích (ví dụ hàm cn)
