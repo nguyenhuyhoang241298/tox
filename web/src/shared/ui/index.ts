@@ -10,5 +10,6 @@ export {
   CardTitle,
 } from './card'
 export { Input } from './input'
+export { Logo, type LogoProps } from './logo'
 export { ProgressBar } from './progress-bar'
 export { ReadingPassage } from './reading-passage'
