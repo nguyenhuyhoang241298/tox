@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
   Input,
+  Logo,
   ProgressBar,
   ReadingPassage,
   type AnswerOptionState,
@@ -58,6 +59,16 @@ export function DevUiPage() {
           Kiểm tra font tiếng Việt: Đường ơi, ữ ượ ặ ỷ — TOEIC Part 7
         </p>
       </header>
+
+      <Section title="Logo">
+        <div className="flex flex-wrap items-end gap-6">
+          <Logo className="h-12" />
+          <Logo variant="mark" className="h-12" />
+          <Logo variant="mark" className="h-8" />
+          <Logo variant="mark" className="h-4" />
+          <Logo variant="wordmark" className="h-6" />
+        </div>
+      </Section>
 
       <Section title="Typography">
         <div className="flex flex-col gap-3">

@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { ROUTES } from '@/shared/config'
-import { Button } from '@/shared/ui'
+import { Button, Logo } from '@/shared/ui'
 import { NAV_LINKS } from '../config/content'
 
 export function LandingHeader() {
@@ -9,10 +9,10 @@ export function LandingHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4">
         <Link
           to={ROUTES.home}
-          className="text-h2 rounded-sm font-bold tracking-tight"
+          className="inline-flex h-11 shrink-0 items-center rounded-sm"
           aria-label="TOX, về trang chủ"
         >
-          TOX
+          <Logo title="" className="h-8" />
         </Link>
         <nav aria-label="Mục trên trang" className="hidden flex-1 lg:block">
           <ul className="flex items-center gap-1">

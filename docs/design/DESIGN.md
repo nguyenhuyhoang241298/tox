@@ -121,6 +121,7 @@ Do not use Tailwind's raw `text-sm`, `text-xl`, … in new code; use the scale a
 | `Badge` | radius full, `text-label`; variants `neutral`, `primary`, `success`, `danger`, `warning`. Pair status colors with an icon or word. |
 | `ProgressBar` | h-2, radius full, `muted` track, `primary` fill, always shows "12/50" text; `role="progressbar"`. |
 | `AnswerOption` | Full-width row, min-h 56px, 1.5px `input` border, radius md, gap 12, 32px letter circle. States: `default` → hover `muted` → `selected` (2px primary + primary-soft) → `correct` (success + check icon + "Đáp án đúng") → `wrong` (danger + x icon + "Bạn chọn"); `disabled` after submit. Use inside `role="radiogroup"`. |
+| `Logo` | Variants `full` (mark + wordmark, header), `mark` (square icon), `wordmark`. Token colors, so light/dark switch automatically. Size with a height class (`h-8` default). See [Logo](#logo). |
 | `ReadingPassage` | Reading mode: `paper` background, radius lg, padding 24, Literata `text-passage`, max 62ch, paragraph spacing 0.9em, optional meta line ("Part 7 · Questions 147–149 · Email"). |
 
 ### Planned (build once, reuse everywhere — follow the same tokens)
@@ -137,6 +138,20 @@ Reading split view: desktop passage 60% / questions 40% with independent scroll;
 "Đoạn văn | Câu hỏi".
 
 Check `web/src/shared/ui` before creating a component; extend instead of duplicating.
+
+## Logo
+
+- **Concept:** an answer sheet. The mark is a `primary` rounded square (radius ≈ 23%) with four
+  bubbles (A–D), the top-right one filled in = "you picked an answer". The wordmark is geometric
+  **TOX** whose **O** is that same filled bubble in `primary`; T and X use `foreground`.
+- **In the app:** always `<Logo />` from `web/src/shared/ui` (never an `<img>`), so colors follow the
+  theme. Header: `variant="full"` at `h-8`; mobile header or tight spots: `variant="mark"`.
+  Minimum size: mark 16px, full logo 24px tall. Keep clear space ≥ half the mark's height.
+- **Static files** (`web/public/`): `logo/tox-{logo,mark,wordmark}{,-dark}.svg` for docs, social and
+  emails; `favicon.svg` (follows OS theme); PWA icons in `icons/` (192, 512, maskable 512 with the
+  mark at 80% for the safe zone, `apple-touch-icon` 180 full-bleed, `favicon-32`) listed in
+  `manifest.webmanifest`.
+- Don't recolor, add gradients or shadows, rotate, or redraw the wordmark in a font.
 
 ## Do / Don't
 

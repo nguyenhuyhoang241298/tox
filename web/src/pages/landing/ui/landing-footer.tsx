@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router'
 import { ROUTES } from '@/shared/config'
-import { Button } from '@/shared/ui'
+import { Button, Logo } from '@/shared/ui'
 
 const FOOTER_COLUMNS = [
   {
@@ -64,7 +64,7 @@ export function LandingFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12">
         <div className="grid gap-8 md:grid-cols-[2fr_1fr_1fr_1fr]">
           <div className="flex flex-col gap-2">
-            <p className="text-h2 font-bold">TOX</p>
+            <Logo className="h-8 self-start" />
             <p className="text-body text-muted-foreground max-w-[40ch]">
               Web app thi thử TOEIC Listening & Reading dành cho người học Việt
               Nam.
