@@ -24,19 +24,23 @@ Node 24 LTS và pnpm, phiên bản ghi trong `.tool-versions` ở gốc repo. CI
 ```
 web/src/
 ├── app/       # Khởi tạo ứng dụng: provider, router, style toàn cục
-├── pages/     # Mỗi trang là một slice (hiện có: home, dev-ui = kitchen sink chỉ khi dev)
-│   └── home/
+├── pages/     # Mỗi trang là một slice: landing (trang giới thiệu cho khách), home (trang chủ học viên),
+│   │          # coming-soon (trang chờ cho tính năng chưa làm), dev-ui (kitchen sink, chỉ khi dev)
+│   └── landing/
 │       ├── ui/      # Component của trang
-│       ├── model/   # State của trang (Zustand store)
+│       ├── config/  # Nội dung tĩnh (tính năng, bảng giá, hỏi đáp)
 │       └── index.ts # Public API của slice
+├── entities/  # Thực thể nghiệp vụ dùng chung (hiện có: session = trạng thái đăng nhập, Zustand store)
 └── shared/    # Code dùng chung, không phụ thuộc nghiệp vụ
     ├── ui/      # Component dùng chung theo design system (button, card, input, badge, progress-bar, answer-option, reading-passage)
     ├── api/     # Cấu hình TanStack Query
-    ├── config/  # Biến môi trường, cấu hình test
+    ├── config/  # Biến môi trường, danh sách route (ROUTES), cấu hình test
     └── lib/     # Tiện ích (ví dụ hàm cn)
 ```
 
-Các layer `widgets/`, `features/`, `entities/` của FSD sẽ được thêm khi cần. Mỗi slice chỉ xuất ra ngoài qua `index.ts`. Quy tắc FSD được kiểm tra bằng Steiger (`pnpm arch`).
+Route `/` hiển thị `landing` khi chưa đăng nhập và `home` khi đã đăng nhập (`app/root-page.tsx`). Các route của tính năng chưa làm (`/login`, `/register`, `/tests`, …) tạm hiển thị `coming-soon`; khai báo trong `app/router.tsx`, thay bằng trang thật khi làm xong.
+
+Các layer `widgets/`, `features/` của FSD sẽ được thêm khi cần. Mỗi slice chỉ xuất ra ngoài qua `index.ts`. Quy tắc FSD được kiểm tra bằng Steiger (`pnpm arch`).
 
 ## Backend (`backend/`)
 
