@@ -25,3 +25,4 @@ Mỗi phiên bản kiến trúc là một file `vN.md` (`v1.md`, `v2.md`, ...).
 ## Tài liệu khác
 
 - [overview.md](./overview.md): mô tả cấu trúc code đang có trong repo (web và backend).
+- [auth.md](./auth.md): thiết kế xác thực (email + mật khẩu, Google, passkey, CAPTCHA, quên mật khẩu). Task triển khai ở [tasks/auth.md](../tasks/auth.md).
