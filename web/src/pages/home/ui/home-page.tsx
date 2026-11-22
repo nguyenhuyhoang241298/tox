@@ -1,4 +1,7 @@
 import { ArrowRight, BookOpen, Headphones, LogOut } from 'lucide-react'
+import { Link } from 'react-router'
+import { useSessionUser, useSignOut } from '@/entities/session'
+import { ROUTES } from '@/shared/config'
 import {
   Button,
   Card,
@@ -8,18 +11,17 @@ import {
   CardHeader,
   CardTitle,
 } from '@/shared/ui'
-import { useSessionUser, useSignIn, useSignOut } from '../model/session.store'
 
+/** Home for logged-in learners (route "/"). Logged-out visitors see the landing page. */
 export function HomePage() {
   const user = useSessionUser()
-  const signIn = useSignIn()
   const signOut = useSignOut()
   return (
     <main className="mx-auto flex max-w-2xl flex-col gap-8 px-4 py-8 md:py-12">
       <header className="flex flex-col gap-2">
         <h1 className="text-display">TOX</h1>
         <p className="text-body-lg text-muted-foreground">
-          {user ? `Xin chào, ${user}!` : 'Thi thử TOEIC Listening & Reading.'}
+          Xin chào, {user ?? 'bạn'}!
         </p>
       </header>
 
@@ -52,17 +54,16 @@ export function HomePage() {
           </ul>
         </CardContent>
         <CardFooter>
-          {user ? (
-            <Button variant="secondary" onClick={signOut}>
-              <LogOut strokeWidth={1.75} aria-hidden />
-              Đăng xuất
-            </Button>
-          ) : (
-            <Button onClick={() => signIn('bạn')}>
-              Bắt đầu
+          <Button asChild>
+            <Link to={ROUTES.tests}>
+              Vào kho đề
               <ArrowRight strokeWidth={1.75} aria-hidden />
-            </Button>
-          )}
+            </Link>
+          </Button>
+          <Button variant="secondary" onClick={signOut}>
+            <LogOut strokeWidth={1.75} aria-hidden />
+            Đăng xuất
+          </Button>
         </CardFooter>
       </Card>
     </main>
